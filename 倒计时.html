@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='numDiv'>20</div>
+	<button id="ting">暂停</button>
+	<button id="zou">继续</button>
+	<button id="end">结束</button>
+	<button id="heal">复原</button>
+
+	<script type="text/javascript">
+		var numDiv=document.getElementById('numDiv');
+		var ting=document.getElementById('ting');
+		var zou=document.getElementById('zou');
+		var end=document.getElementById('end');
+		var heal=document.getElementById('heal');
+		var num=20;
+		var interval=setInterval(function(){
+			if(num==0){
+				clearInterval(interval);
+			}
+		numDiv.innerHTML=num--;
+	},1000);
+		ting.onclick=function(){
+			clearInterval(interval)
+		}
+		zou.onclick=function(){
+			interval=setInterval(function(){
+			if(num==0){
+				clearInterval(interval);
+			}
+		numDiv.innerHTML=num--;
+	},1000);
+		}
+		end.onclick=function(){
+			clearInterval(interval);
+			numDiv.innerHTML=0;
+		}
+		heal.onclick=function(){
+			var num=20;
+			interval=setInterval(function(){
+			if(num==0){
+				clearInterval(interval);
+			}
+		numDiv.innerHTML=num--;
+	},1000);
+		}
+
+</script>
+</body>
+</html>
